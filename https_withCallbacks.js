@@ -2,13 +2,9 @@
 
 var https = require('https');                               
 
-var options = {
-    host: 'sytantris.github.io',
-    path: '/http-examples/step4.html'
-  };
 
 
-function getHTML(options, callback) {
+var getHTML = function getHTML(options, callback) {
 
     var eachChunk = '';
       
@@ -32,9 +28,6 @@ function getHTML(options, callback) {
       });
 }
 
-function printHTML (html) {
-    console.log(html);
-  }
 
-getHTML(options, printHTML);
 
+module.exports = getHTML;
