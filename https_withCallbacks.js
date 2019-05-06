@@ -4,10 +4,11 @@ var https = require('https');
 
 var options = {
     host: 'sytantris.github.io',
-    path: '/http-examples/step1.html'
+    path: '/http-examples/step4.html'
   };
 
-function getAndPrintHTML (options) {
+
+function getHTML(options, callback) {
 
     var eachChunk = '';
       
@@ -24,14 +25,16 @@ function getAndPrintHTML (options) {
         });
       
         response.on('end', function() {
-            console.log('Chunk Received. Length:', eachChunk  + '\n');
-            console.log('Response stream complete.');
+           callback(eachChunk);
           
         });
       
       });
-    
+}
+
+function printHTML (html) {
+    console.log(html);
   }
 
+getHTML(options, printHTML);
 
-getAndPrintHTML(options);
