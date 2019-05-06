@@ -5,12 +5,14 @@ var https = require('https');
 // and the path is the resource - '/' is the root path, but if you wanted to read a
 // particular resource (like '/login/index.html'), that would be defined in the path
 
+var requestOptions = {
+    host: 'sytantris.github.io',
+    path: '/http-examples/step1.html'
+  };
+
 function getAndPrintHTMLChunks () {
 
-    var requestOptions = {
-      host: 'sytantris.github.io',
-      path: '/http-examples/step1.html'
-    };
+    
 
     https.get(requestOptions, function (response) {
 
@@ -19,7 +21,7 @@ function getAndPrintHTMLChunks () {
       
         // the callback is invoked when a `data` chunk is received
         response.on('data', function (data) {
-          console.log('Chunk Received. Length:', data.length  + '\n');
+          console.log('Chunk Received. Length:', data  + '\n');
         });
       
         // the callback is invoked when all of the data has been received
