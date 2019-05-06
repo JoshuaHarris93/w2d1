@@ -15,7 +15,7 @@ function getAndPrintHTML (options) {
     var eachChunk = '';
       
 
-    https.get(requestOptions, function (response) {
+    https.get(options, function (response) {
         
         // set encoding of received data to UTF-8
         response.setEncoding('utf8');
