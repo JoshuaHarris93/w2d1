@@ -14,19 +14,6 @@ function getAndPrintHTML () {
         path: '/http-examples/step1.html'
       };
 
-    //   var sum = function sum() {
-    //     var totalSum;
-    //     if (arr.length === 0) {
-    //       return 0;
-    //     } else {
-    //       totalSum = arr.reduce(function(a, b) {
-    //         return a + b;
-    //       });
-    //     }
-    //     return totalSum;
-
-    //   }
-
     
     var eachChunk = '';
       
